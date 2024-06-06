@@ -1,7 +1,11 @@
 
+import { useState } from "react";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver }  from "@hookform/resolvers/zod";
+import { useNavigate } from "react-router-dom";
+
+import { useAuth } from "@/context/AuthProvider/useAuth";
 import Button from '@/components/Button';
 
 const loginSchema = z.object({
@@ -11,7 +15,10 @@ const loginSchema = z.object({
 
 
 const Login = () => {
-    
+    const auth = useAuth();
+    const navigate = useNavigate();
+    const [message, setMessage] = useState("");
+    // const [. setMessage] = useState("");
 
     const { register, handleSubmit } = useForm({
         resolver: zodResolver(loginSchema)
@@ -21,7 +28,15 @@ const Login = () => {
         console.error(errors);
     }
     function handleLogin(data){
-        console.log(data);
+        setMessage("");
+
+        try {
+            auth.authenticate(data);
+            setMessage("Erro no login! E-mail ou senha inválido!");
+            return navigate("/");
+        } catch (error) {
+            setMessage("Erro no login! E-mail ou senha inválido!");
+        }
     }
 
     return (
@@ -38,6 +53,8 @@ const Login = () => {
                     <label htmlFor="password">Senha</label>
                     <input type="text" id="password" {...register('password')} />
                 </fieldset> 
+
+                <p>{message}</p>
 
                 <Button btnColor="info" btnStyle="solid lg" type="submit">
                     Login    

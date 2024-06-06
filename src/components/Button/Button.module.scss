@@ -3,7 +3,6 @@
     border-radius: 8px;
     padding: .875rem 0;
 
-    font-size: 1rem;
     font-weight: 500;
     text-transform: uppercase;
     cursor: pointer;
@@ -55,15 +54,27 @@
                 background: $bv-info;
             }
         }
+
+        &.font-sm{
+            font-size: .875rem;
+        }
+
+        &.font-md{
+            font-size: 1rem;
+        }
+
+        &.font-lg{
+            font-size: 1.5rem;
+        }
     
         &.sm{
-            width: 62px;
+            padding: .875rem 1rem;
         }
         &.md{
-            width: 84px;
+            padding: .875rem 1.5rem;
         }
         &.lg{
-            width: 164px;
+            padding: .875rem 2rem;
         }
         
     }

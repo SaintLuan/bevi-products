@@ -15,11 +15,14 @@ export const AuthProvider =({children})=>{
     },[]);
 
 
+
     async function authenticate(data){
         const response = await LoginRequest(data);
 
         const payload = {
-            token: response.access_token
+            email: data.email,
+            token: response.access_token,
+            exp: response.expires_in
         };
         setUser(payload);
         setUserLocalStorage(payload);

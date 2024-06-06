@@ -1,7 +1,7 @@
 .navbar{
     width: 100%;
     background-color: $bv-white;
-    padding: 2rem 0;
+    padding: 1.875rem 0;
     box-shadow: 0 4px 4px rgba(0, 0, 0, .04), 0 3px 3px rgba(0, 0, 0, .03), 0 2px 2px rgba(0, 0, 0, .02);
 
     &_options{
@@ -12,6 +12,58 @@
 
         i{
             font-size: 24px;
+        }
+
+        &_account{
+            position: relative;
+            button{
+                position: relative;
+                &:after{
+                    width: 24px;
+                    height: 24px;
+
+                    display: inline-block;
+                    position: absolute;
+                    right: 4px;
+
+                    content: '';
+                    -webkit-mask: url('../../assets/icons/angle-down.svg') no-repeat 50% 50%;
+                    mask: url('../../assets/icons/angle-down.svg') no-repeat 50% 50%;
+                    -webkit-mask-size: cover;
+                    mask-size: cover;
+
+                    background-color: $bv-primary-01;
+                }
+            }
+
+            .account_list{
+                display: none;
+                width: 75%;
+                padding: 1rem .875rem;
+                background-color: $bv-white;
+                box-shadow: 0 4px 4px rgba(0, 0, 0, .04), 0 3px 3px rgba(0, 0, 0, .03), 0 2px 2px rgba(0, 0, 0, .02);
+
+                position: absolute;
+                right: 0;
+
+                a, button{
+                    cursor: pointer;
+                    margin: .5rem 0;
+                    display: flex;
+                    align-items: center;
+                    gap: .5rem;
+
+                    &::after{
+                        display: none;
+                    }
+                }
+            }
+
+            &:hover{
+                .account_list{
+                    display: block;
+                }
+            }
         }
     }
 }

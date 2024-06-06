@@ -7,7 +7,7 @@ import Login from "./Login";
 const Layout = () => {
     const auth = useAuth();
 
-    if(!auth.email){
+    if(!auth.token){
         return(
             <Login />
         );

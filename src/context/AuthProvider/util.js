@@ -10,7 +10,7 @@ export function getUserLocalStorage(){
         return null;
     }
 
-    const user = JSON.parser(json);
+    const user = JSON.parse(json);
 
     return user ?? null;
 }

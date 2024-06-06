@@ -1,6 +1,7 @@
 .sidebar{
     width: 20vw;
-    height: 100vh;
+    min-height: 100vh;
+    height: 100%;
     padding: 2rem 2rem;
 
     position: absolute;
@@ -40,9 +41,6 @@
                 align-items: center;
                 gap: .5rem;
             }
-            &.active{
-                
-            }
 
             .submenu{
                 display: none;
@@ -72,6 +70,7 @@
                     a{
                         &::after{
                             background-color: $bv-white;
+                            transform: rotate(180deg);
                         }
                     }
                 }
@@ -100,7 +99,28 @@
 
                         background-color: $bv-primary-01;
                     }
+
+                    &:hover{
+                        color: $bv-gray-01;
+                    }
                 }
+            }
+        }
+        .menu_item_active{
+            background-color: $bv-primary-02;
+            color: $bv-white;
+            
+            &:has(.submenu){
+                a{
+                    &::after{
+                        background-color: $bv-white;
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+
+            .submenu{
+                display: block;
             }
         }
     }
