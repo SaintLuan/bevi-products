@@ -1,0 +1,41 @@
+.login_page{
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    form{
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        background-color: $bv-white;
+        border-radius: 8px;
+        padding: 2rem 0;
+
+        fieldset{
+            width: 85%;
+            margin: .5rem 0;
+            label{
+                display: block;
+            }
+            input{
+                width: 100%;
+                padding: .75rem .875rem;
+                border: 1px solid $bv-gray-02;
+                border-radius: 8px;
+                color: $bv-primary-01;
+            }
+        }
+
+        button{
+            width: 85%;
+            margin-top: 1.5rem;
+        }
+
+    }
+}

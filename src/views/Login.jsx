@@ -40,18 +40,17 @@ const Login = () => {
     }
 
     return (
-        <section>
-            
+        <section className="login_page">
             <form noValidate onSubmit={handleSubmit(handleLogin, onInvalid)} >
                 <h1>Login</h1>
                 <fieldset className="lg">
                     <label htmlFor="email">Email</label>
-                    <input type="text" id="email" {...register('email')} />
+                    <input type="text" id="email" {...register('email')} placeholder="E-mail"/>
                 </fieldset>
 
                 <fieldset className="lg">
                     <label htmlFor="password">Senha</label>
-                    <input type="text" id="password" {...register('password')} />
+                    <input type="password" id="password" {...register('password')} placeholder="Senha"/>
                 </fieldset> 
 
                 <p>{message}</p>

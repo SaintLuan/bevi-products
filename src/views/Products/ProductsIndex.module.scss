@@ -1,0 +1,42 @@
+.product_listing{
+    width: 100%;
+    margin: 2rem 0;
+    padding: 1.5rem .875rem;
+    background-color: $bv-white;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, .04), 0 3px 3px rgba(0, 0, 0, .03), 0 2px 2px rgba(0, 0, 0, .02);
+    border-radius: 4px;
+
+    h2{
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin-bottom: 1.5rem;
+    }
+
+    .data_table{
+        width: 100%;
+
+        thead, tfoot{
+            td{
+                font-size: 1.125rem;
+                font-weight: 600;
+                color: $bv-gray-03;
+            }
+        }
+
+        tr{
+            width: 100%;
+            border-bottom: 1px solid $bv-gray-01;
+            
+            td{
+                padding: .875rem .5rem;
+
+                i{
+                    font-size: 1.125rem;
+                    &:first-of-type{
+                        margin-right: .875rem;
+                    }
+                }
+            }
+        }
+    }
+}
