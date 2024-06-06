@@ -1,0 +1,26 @@
+.card{
+    background-color: $bv-white;
+    box-shadow: 0px 0px 64px 0px rgba(187,188,221,.08), 0px 3px 64px 0px rgba(187,188,221,.16);
+    border-radius: 8px;
+    padding: 1rem 1.5rem;
+
+    header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &:global{
+
+        &.sm{
+            width: calc(100%/3);
+        }
+        &.md{
+            width: calc(100%/2);
+        }
+
+        &.lg{
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,22 @@
+::-webkit-scrollbar {
+    width: $bv-scrollbar-size;
+    border-radius: $bv-scrollbar-radius;
+}
+
+::-webkit-scrollbar-track {
+    background: $bv-scrollbar-background;
+}
+
+::-webkit-scrollbar-thumb {
+    background: $bv-scrollbar-color;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: $bv-scrollbar-color-hover;
+}
+
+body{
+    background: $bv-gray-95;
+    color: $bv-gray-04;    
+    font-family: $bv-font;
+}

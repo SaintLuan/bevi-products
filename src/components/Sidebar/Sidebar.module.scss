@@ -1,0 +1,107 @@
+.sidebar{
+    width: 20vw;
+    height: 100vh;
+    padding: 2rem 2rem;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    background: $bv-white;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, .04), 0 3px 3px rgba(0, 0, 0, .03), 0 2px 2px rgba(0, 0, 0, .02);
+
+    &_logo{
+        width: 45%;
+        margin-bottom: 2rem;
+    }
+
+    &_menu{
+        .menu_sec_title{
+            display: block;
+            padding: .5rem 0;
+            font-size: .875rem;
+            color: $bv-primary-01;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .menu_item{
+            width: 100%;
+            position: relative;
+            padding: .875rem 1rem;
+            border-radius: 8px;
+
+            font-size: 1.125rem;
+            font-weight: 500;
+            color: $bv-primary-01;
+            a{
+                width: 100%;
+                display: flex;
+                align-items: center;
+                gap: .5rem;
+            }
+            &.active{
+                
+            }
+
+            .submenu{
+                display: none;
+
+                width: 100%;
+                background-color: $bv-primary-02;
+                padding-top: .875rem;
+                padding-left: .5rem;
+                .menu_item{
+                    color: $bv-white;
+                    padding: .375rem 0;
+                    font-size: 1rem;
+
+                    a{
+                        &::after{
+                            display: none;
+                        }
+                    }
+                }
+            }
+
+            &:hover{
+                background-color: $bv-primary-02;
+                color: $bv-white;
+
+                &:has(.submenu){
+                    a{
+                        &::after{
+                            background-color: $bv-white;
+                        }
+                    }
+                }
+
+                .submenu{
+                    display: block;
+                }
+            }
+
+
+            &:has(.submenu){
+                a{
+                    &::after{
+                        width: 24px;
+                        height: 24px;
+
+                        display: inline-block;
+                        position: absolute;
+                        right: 4px;
+
+                        content: '';
+                        -webkit-mask: url('../../assets/icons/angle-down.svg') no-repeat 50% 50%;
+                        mask: url('../../assets/icons/angle-down.svg') no-repeat 50% 50%;
+                        -webkit-mask-size: cover;
+                        mask-size: cover;
+
+                        background-color: $bv-primary-01;
+                    }
+                }
+            }
+        }
+    }
+}

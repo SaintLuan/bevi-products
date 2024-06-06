@@ -1,0 +1,29 @@
+.wrapper{
+    width: 85vw;
+
+    &.flex{
+        display: flex;
+        align-items: center;
+
+        &.justify-start{
+            justify-content: flex-start;
+        }
+
+        &.justify-center{
+            justify-content: center;
+        }
+
+        &.justify-end{
+            justify-content: flex-end;
+        }
+    }
+
+    @media screen and (min-width: 1440px){
+        width: 75vw;
+    }
+}
+
+.page_content{
+    width: 75vw;
+    margin: 2rem auto 0 22vw;
+}
