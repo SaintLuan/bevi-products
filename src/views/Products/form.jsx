@@ -1,6 +1,7 @@
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver }  from "@hookform/resolvers/zod";
+import Swal from 'sweetalert2';
 
 import styles from './ProductForm.module.scss';
 import Title from "@/components/Title";
@@ -35,29 +36,61 @@ const ProductForm = ({action}) => {
         } : undefined,
         resolver: zodResolver(createProducSchema)
     });
-    const onInvalid = (errors) => console.error(errors)
+    const onInvalid = (errors) => {
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: errors,
+        });
+    }
 
     function handleCreateProduct(data){
         if(state){
             data.id= state.product.product.id;
             beviApi.put('product/update', data).then((res) => {
                 if(res.status == 200 && res.data.success == true){
-                    console.log(res)
+                    Swal.fire({
+                        icon: "success",
+                        title: "Sucesso!",
+                        text: "Produto editado com sucesso!",
+                    });
                 }else{
-                    console.log(res)
+                    Swal.fire({
+                        icon: "error",
+                        title: "Oops...",
+                        text: "Erro ao editar este produto... Tente novamente mais tarde",
+                    });
                 }
             }).catch((err) => {
                 console.log(err)
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Erro ao editar este produto... Tente novamente mais tarde",
+                });
             });
         }else{
             beviApi.post('product/create', data).then((res) => {
                 if(res.status == 200 && res.data.success == true){
-                    console.log(res)
+                    Swal.fire({
+                        icon: "success",
+                        title: "Sucesso!",
+                        text: "Produto cadastrado com sucesso!",
+                    });
                 }else{
-                    console.log(res)
+                    Swal.fire({
+                        icon: "error",
+                        title: "Oops...",
+                        text: "Erro ao cadastrar este produto... Tente novamente mais tarde",
+                    });
                 }
             }).catch((err) => {
                 console.log(err)
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Erro ao cadastrar este produto... Tente novamente mais tarde",
+                });
             });
         }
     }

@@ -4,6 +4,7 @@ import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver }  from "@hookform/resolvers/zod";
 import { useNavigate } from "react-router-dom";
+import Swal from 'sweetalert2';
 
 import { useAuth } from "@/context/AuthProvider/useAuth";
 import Button from '@/components/Button';
@@ -25,7 +26,11 @@ const Login = () => {
     }); 
     
     const onInvalid = (errors) => {
-        console.error(errors);
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: errors,
+        });
     }
     function handleLogin(data){
         setMessage("");

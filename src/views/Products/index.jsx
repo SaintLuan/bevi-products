@@ -43,7 +43,7 @@ const Products = () => {
             if(res.status == 200 && res.data.success == true){
                 Swal.fire({
                     icon: "success",
-                    title: "Oops...",
+                    title: "Sucesso!",
                     text: "Produto deletado com sucesso!",
                 });
                 getProducts();
@@ -60,6 +60,7 @@ const Products = () => {
                 title: "Oops...",
                 text: "Erro ao deletar este produto... Tente novamente mais tarde",
             });
+            console.log(err);
         });
     }
 
