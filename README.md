@@ -44,10 +44,7 @@ Inicie o servidor
 
 Para rodar esse projeto, você vai precisar adicionar as seguintes variáveis de ambiente no seu .env
 
-`API_KEY`
-
-`ANOTHER_API_KEY`
-
+`VITE_BEVI_URL_API` = "URL_API"
 
 ## Rodando os testes
 
