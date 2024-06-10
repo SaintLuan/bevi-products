@@ -1,0 +1,8 @@
+.headerSection h1 {
+  font-size: 2rem;
+}
+.headerSection nav ul {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}/*# sourceMappingURL=Title.module.css.map */

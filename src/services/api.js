@@ -2,7 +2,7 @@ import { getUserLocalStorage } from "@/context/AuthProvider/util";
 import axios from "axios";
 
 export const beviApi = axios.create({
-    baseURL: "http://34.71.240.100/api/"
+    baseURL: import.meta.env.VITE_BEVI_URL_API
 });
 
 beviApi.interceptors.request.use(

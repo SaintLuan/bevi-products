@@ -32,7 +32,7 @@ const Login = () => {
 
         try {
             auth.authenticate(data);
-            setMessage("Erro no login! E-mail ou senha inválido!");
+            setMessage("Login realizado com sucesso!!");
             return navigate("/");
         } catch (error) {
             setMessage("Erro no login! E-mail ou senha inválido!");
@@ -42,7 +42,7 @@ const Login = () => {
     return (
         <section className="login_page">
             <form noValidate onSubmit={handleSubmit(handleLogin, onInvalid)} >
-                <h1>Login</h1>
+                <h1>Login {import.meta.env.VITE_BEVI_URL_API}</h1>
                 <fieldset className="lg">
                     <label htmlFor="email">Email</label>
                     <input type="text" id="email" {...register('email')} placeholder="E-mail"/>

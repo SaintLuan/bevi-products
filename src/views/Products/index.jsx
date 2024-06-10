@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { beviApi } from "@/services/api";
+import Swal from 'sweetalert2';
 
 import styles from './ProductsIndex.module.scss';
 
@@ -13,7 +14,7 @@ const Products = () => {
     const [products, setProducts] = useState([]);
     const [producMessage, setProductMesage] = useState("");
 
-    useEffect(()=>{
+    function getProducts(){
         beviApi.post('product/list', {}).then((res) => {
             setProducts([]);
             if(res.status == 200 && res.data.success == true){
@@ -27,7 +28,43 @@ const Products = () => {
             setProductMesage(`Erro ao buscar produtos! <br> <span>Erro: ${err}</span>`);
             setHasProducts(false);
         });
-        
+    }
+
+    function handleDeleteProduct (product){
+
+        var data = {
+            id: product,
+        }
+
+        beviApi.delete(
+            'product/delete', 
+            {data: data}
+        ).then((res) => {
+            if(res.status == 200 && res.data.success == true){
+                Swal.fire({
+                    icon: "success",
+                    title: "Oops...",
+                    text: "Produto deletado com sucesso!",
+                });
+                getProducts();
+            }else{
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Erro ao deletar este produto... Tente novamente mais tarde",
+                });
+            }
+        }).catch((err) => {
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Erro ao deletar este produto... Tente novamente mais tarde",
+            });
+        });
+    }
+
+    useEffect(()=>{
+        getProducts();        
     },[]);
     return(
         <section className="page_content">
@@ -47,7 +84,7 @@ const Products = () => {
                                 <tr>
                                     <td>#</td>
                                     <td>Produto</td>
-                                    <td>Quantidade disponível</td>
+                                    <td>Estoque disponível</td>
                                     <td>Preço de venda</td>
                                     <td>Status</td>
                                     <td>Ações</td>
@@ -73,7 +110,9 @@ const Products = () => {
                                                     <i className="uil uil-edit"></i>
                                                 </NavLink>
 
-                                                <NavLink to={`/products/delete/${product.id}`}><i className="uil uil-trash-alt"></i></NavLink>
+                                                <button onClick={()=>{handleDeleteProduct(product.id)}}>
+                                                    <i className="uil uil-trash-alt"></i>
+                                                </button>
                                             </td>
                                         </tr>
                                     )
@@ -84,7 +123,7 @@ const Products = () => {
                                 <tr>
                                     <td>#</td>
                                     <td>Produto</td>
-                                    <td>Quantidade disponível</td>
+                                    <td>Estoque disponível</td>
                                     <td>Preço de venda</td>
                                     <td>Status</td>
                                 </tr>

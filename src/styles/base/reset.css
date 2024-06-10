@@ -1,0 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+select, input, textarea, button, fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+}
+
+figure {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  line-height: 0;
+}
+figure img {
+  width: 100%;
+}
+
+ul, li, dt {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+html {
+  font-family: "Barlow", sans-serif;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+:focus {
+  outline: 0;
+}
+
+body, input, textarea, button {
+  font-family: "Barlow", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+fieldset {
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  padding-block-start: 0;
+  padding-inline-start: 0;
+  padding-inline-end: 0;
+  padding-block-end: 0;
+}
+
+table {
+  border-collapse: collapse;
+}/*# sourceMappingURL=reset.css.map */
