@@ -1,4 +1,18 @@
 
+# App CRUD Ract.js - Bevi Promotora de Crédito
+
+Este projeto é um projeto de teste para a empresa Bevi Promotora de Crédito!
+
+
+
+## Stack utilizada
+
+**Front-end:** React, SCSS, Vite
+
+**Libs**: Axios, Zod & react-hook-form, Sweet ALert
+
+
+
 ## Rodando localmente
 
 Clone o projeto
@@ -24,4 +38,18 @@ Inicie o servidor
 ```bash
   yarn dev
 ```
+
+
+## Variáveis de Ambiente
+
+Para rodar esse projeto, você vai precisar adicionar as seguintes variáveis de ambiente no seu .env
+
+`API_KEY`
+
+`ANOTHER_API_KEY`
+
+
+## Rodando os testes
+
+Neste projeto, infelizmente ainda não consgui realizar a implementação dos testes
 
