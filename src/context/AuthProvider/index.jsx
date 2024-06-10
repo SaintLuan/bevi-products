@@ -24,8 +24,14 @@ export const AuthProvider =({children})=>{
             token: response.access_token,
             exp: response.expires_in
         };
+        
         setUser(payload);
         setUserLocalStorage(payload);
+
+        if (Date.now() >= response.expires_in) {
+            setUser(null);
+            setUserLocalStorage(null);
+        }
     }
 
     function logout(){

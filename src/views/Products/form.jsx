@@ -53,6 +53,8 @@ const ProductForm = ({action}) => {
                         icon: "success",
                         title: "Sucesso!",
                         text: "Produto editado com sucesso!",
+                    }).then(()=>{
+                        window.location="/products";
                     });
                 }else{
                     Swal.fire({
@@ -76,6 +78,8 @@ const ProductForm = ({action}) => {
                         icon: "success",
                         title: "Sucesso!",
                         text: "Produto cadastrado com sucesso!",
+                    }).then(()=>{
+                        window.location="/products";
                     });
                 }else{
                     Swal.fire({
