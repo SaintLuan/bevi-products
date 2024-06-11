@@ -28,10 +28,10 @@ export const AuthProvider =({children})=>{
         setUser(payload);
         setUserLocalStorage(payload);
 
-        if (Date.now() >= response.expires_in) {
-            setUser(null);
-            setUserLocalStorage(null);
-        }
+        // if (Date.now() >= response.expires_in) {
+        //     setUser(null);
+        //     setUserLocalStorage(null);
+        // }
     }
 
     function logout(){
