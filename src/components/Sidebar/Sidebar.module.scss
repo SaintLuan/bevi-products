@@ -14,6 +14,17 @@
     &_logo{
         width: 45%;
         margin-bottom: 2rem;
+
+        img{
+            &:last-child{
+                display: none;
+            }
+        }
+
+    }
+
+    .toggle_sidebar{
+        display: none;
     }
 
     &_menu{
@@ -121,6 +132,72 @@
 
             .submenu{
                 display: block;
+            }
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        width: 35vw;
+        transition: width ease-in-out .5s;
+        &_logo{
+            width: 48px;
+
+            img{
+                &:first-child{
+                    display: none;
+                }
+
+                &:last-child{
+                    display: block;
+                }
+            }
+        }
+
+        .toggle_sidebar{
+            font-size: 32px;
+            color: $bv-primary-01;
+            display: block;
+            position: absolute;
+            right: 8px;
+            top: 18px;
+        }
+
+        &_menu{
+            .menu_item{
+                a{
+                    width: auto;
+                    span{
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        &:global{
+            &.active{
+                width: 100vw;
+
+                figure{
+                    width: 148px;
+                    img{
+                        &:first-child{
+                            display: block;
+                        }
+        
+                        &:last-child{
+                            display: none;
+                        }
+                    }
+                }
+
+                .menu_item{
+                    a{
+                        width: 75%;
+                        span{
+                            display: block;
+                        }
+                    }
+                }
             }
         }
     }

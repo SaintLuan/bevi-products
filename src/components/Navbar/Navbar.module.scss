@@ -66,4 +66,20 @@
             }
         }
     }
+
+    @media screen and (max-width: 767px) {
+        &_options{
+            &_account{
+                button{
+                    span{
+                        display: none;
+                    }
+                }
+
+                .account_list{
+                    width: 148px;
+                }
+            }
+        }
+    }
 }

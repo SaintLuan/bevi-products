@@ -21,7 +21,7 @@ const Navbar = () => {
                     <aside className={`${styles.navbar_options_account}`}>
                         <Button btnStyle="lg outline" btnColor="primary-01" fontSize="font-sm">
                             <i className="uil uil-user"></i>
-                            {currUser}
+                            <span>{currUser}</span>                            
                         </Button>
 
                         <article className={`${styles.account_list}`}>
